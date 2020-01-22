@@ -16,7 +16,7 @@ public class playerController : MonoBehaviour
     {
         if (transform.position.z > floorOnRunning.transform.position.z + 32)
         {
-
+            floorOnRunning.transform.position = new Vector3(0, 0,floorForwand.transform.position.z+32 );
         }
     }
 }    
