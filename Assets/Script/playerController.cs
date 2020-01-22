@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public GameObject floorOnRunning;
-    public GameObject floorForwand;
+    public float speed = 1;
     // Start is called before the first frame update
     void Start()
     {
 
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > floorOnRunning.transform.position.z + 32)
-        {
-            floorOnRunning.transform.position = new Vector3(0, 0,floorForwand.transform.position.z+32 );
-        }
-    }
-}    
-    
+        transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
 
+    }
+}
