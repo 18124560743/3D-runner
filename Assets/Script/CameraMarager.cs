@@ -18,7 +18,7 @@ public class CameraMarager : MonoBehaviour
     void Update()
     {
     }
-     void Lateupdat()
+     void Lateupdte()
     {
         transform.position = new Vector3(target.transform.position.x,
             target.transform.position.y+height,
