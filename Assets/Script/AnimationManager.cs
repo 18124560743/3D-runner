@@ -23,6 +23,6 @@ public class AnimationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animation.Play();
+        //    animation.Play(Run);
     }
 }
