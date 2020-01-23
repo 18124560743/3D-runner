@@ -44,8 +44,9 @@ public class playerController : MonoBehaviour
             Vector3 vec = Input.mousePosition - mousePos;
             if (vec.magnitude > 20)
             {
-                var angle = Mathf.Acos(Vector3.Dot(vec.normalized, Vector2.up));
+                var angle = Mathf.Acos(Vector3.Dot(vec.normalized, Vector2.up)) * Mathf.Rad2Deg;
                 Debug.Log(angle);
+                activeInput = false;
             }
 
         }
