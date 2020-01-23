@@ -21,11 +21,12 @@ public class CameraMarager : MonoBehaviour
      }
      void LateUpdate()
      {
-        transform.position = new Vector3(target.transform.position.x,
-            target.transform.position.y+height,
-            target.transform.position.z-distance );
+        //transform.position = new Vector3(target.transform.position.x,
+        //    target.transform.position.y + height,
+        //    target.transform.position.z - distance);
         pos.x = Mathf.Lerp(pos.x, target.transform.position.x, Time.deltaTime);
         pos.y = Mathf.Lerp(pos.y, target.transform.position.y + height, Time.deltaTime);
         pos.z = Mathf.Lerp(pos.z, target.transform.position.z-distance, Time.deltaTime);
+        transform.position = pos;
      }
  }
