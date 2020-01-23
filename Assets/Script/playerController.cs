@@ -44,9 +44,26 @@ public class playerController : MonoBehaviour
             Vector3 vec = Input.mousePosition - mousePos;
             if (vec.magnitude > 20)
             {
-                var angle = Mathf.Acos(Vector3.Dot(vec.normalized, Vector2.up)) * Mathf.Rad2Deg;
-                Debug.Log(angle);
+                var angleY = Mathf.Acos(Vector3.Dot(vec.normalized, Vector2.up)) * Mathf.Rad2Deg;
+                var anglex = Mathf.Acos(Vector3.Dot(vec.normalized, Vector2.right)) * Mathf.Rad2Deg;
+                if(angleY <=45)
+                {
+                    inputDirection = InputDirection.Up;
+                }
+                else if(angleY >=135)
+                {
+                    inputDirection = InputDirection.Down;
+                }
+                else if(anglex <= 45)
+                {
+                    inputDirection = InputDirection.Right;
+                }
+                else if(anglex>=135)
+                {
+                    inputDirection = InputDirection.Left;
+                }
                 activeInput = false;
+                Debug.Log(inputDirection);
             }
 
         }
