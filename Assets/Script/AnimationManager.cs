@@ -17,7 +17,7 @@ public class AnimationManager : MonoBehaviour
     public AnimationClip TurnRight;
 
     public AnimationHandler animationHandler;
-
+            
     // Start is called before the first frame update
     void Start()
     {
