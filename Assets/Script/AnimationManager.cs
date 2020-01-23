@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
 {
+
+    public delegate void AnimationHandler();
     Animation animation;
     public AnimationClip Dead;
     public AnimationClip JumpDown;
@@ -14,15 +16,24 @@ public class AnimationManager : MonoBehaviour
     public AnimationClip TurnLeft;
     public AnimationClip TurnRight;
 
+    public AnimationHandler animationHandler;
+
     // Start is called before the first frame update
     void Start()
     {
         animation = GetComponent<Animation>();
+       
     }
+
+    
 
     // Update is called once per frame
     void Update()
     {
-        animation.Play(Run.name);
+        //animation.Play(Run.name);
+        if (animationHandler!=null)
+        {
+            animationHandler();
+        }   
     }
 }

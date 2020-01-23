@@ -19,18 +19,39 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(UpdateAction());
-        IEnumerator UpdateAction()
+        StartCoroutine(UpdateAction());  
+    }
+
+    IEnumerator UpdateAction()
+    {
+        while (true)
         {
-            while(true)
-            {
-                yield return 0;
-                GetInputDirection();
-            }
+            GetInputDirection();
+            playAnimation();
+            yield return 0;
+            
+        }
+
+    }
+    void playAnimation()
+    {
+        if (inputDirection==InputDirection.Left)
+        {
+
+        }
+        else if (inputDirection == InputDirection.Right)
+        {
+
+        }
+        else if (inputDirection == InputDirection.Up)
+        {
+
+        }
+        else if (inputDirection == InputDirection.Down)
+        {
 
         }
     }
-
     void GetInputDirection()
     {
         inputDirection = InputDirection.NuLL;
